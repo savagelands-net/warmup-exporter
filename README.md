@@ -72,17 +72,13 @@ scrape_configs:
   - job_name: 'warmup-exporter'
     static_configs:
       - targets:
-        # IP of the exporter
-        - warmup-exporter-service:9101
+        # Thermostat IDs
+        - 123456
     params:
       username:
         - "my@warmup_email_address"
       password:
         - "my_warmup_password"
-      location:
-        - YOUR_LOCATION_NAME
-      room:
-        - YOUR_ROOM_NAME
 ```
 
 ## Docker Build Instructions
