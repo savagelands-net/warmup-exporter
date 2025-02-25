@@ -20,12 +20,12 @@ class Exporter:
         return self.collectors[thermostat_id]
 
     async def collect(self, request: web.Request) -> web.Response:
-        thermostat_id = request.query.get("thermostat_id")
+        thermostat_id = request.query.get("target")
         username = request.query.get("username")
         password = request.query.get("password")
         if not thermostat_id or not username or not password:
             return web.Response(
-                body="'thermostat_id', 'username' and 'password' parameters must be specified",
+                body="'target', 'username' and 'password' parameters must be specified",
                 status=400,
             )
 
